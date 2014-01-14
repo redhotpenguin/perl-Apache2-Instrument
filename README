@@ -1,0 +1,42 @@
+NAME
+    Apache2-Instrument - An instrumentation framework for mod_perl
+
+SYNOPSIS
+    In your httpd.conf file:
+
+     PerlInitHandler Apache2::Instrument::Time
+
+    To activate instrumentation on a per request basis, add 'instrument' to
+    the end of your user agent, and add this line to httpd.conf:
+
+     PerlSetVar Apache2-Instrument-Useragent 1
+
+DESCRIPTION
+    Five instrumentation handlers are available.
+
+    Time outputs the total request time.
+
+    Memory outputs a GTop memory profile.
+
+    Strace outputs a general purpose strace.
+
+    DBI outputs a DBI::Profile dump.
+
+    Procview outputs a combination strace and lsof report to a tempfile.
+
+    See the source code for details.
+
+AUTHOR
+    Phillipe M. Chiasson gozer@apache.org
+
+    Version 0.02 released by Fred Moyer fred@redhotpenguin.com
+
+    Nick Townsend (github.com/townsen) contributed Procview
+    (https://github.com/townsen/procview)
+
+LICENCE AND COPYRIGHT
+    Copyright 2006 Phillipe M. Chiasson
+
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself. See perlartistic.
+
